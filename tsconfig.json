@@ -1,12 +1,12 @@
 {
   "compilerOptions": {
     "target": "ES2022",
-    "module": "Node16",
-    "moduleResolution": "Node16",
+    "module": "ESNext",                        // ✅ 改为 ESNext 保证输出为原生 ES 模块（npx ESM 支持更好）
+    "moduleResolution": "Node",               // ✅ 改为 Node（Node16 有时处理 commonjs fallback 不好）
     "outDir": "./dist",
     "rootDir": "./src",
     "strict": true,
-    "esModuleInterop": true,
+    "esModuleInterop": true,                  // ✅ 保留：允许默认导入 commonjs 模块如 ws
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "resolveJsonModule": true

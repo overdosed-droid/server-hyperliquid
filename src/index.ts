@@ -1,5 +1,9 @@
 #!/usr/bin/env node
 
+import WebSocket from 'ws';
+(globalThis as any).WebSocket = WebSocket;
+
+
 import { Server } from "@modelcontextprotocol/sdk/server/index.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 import {
