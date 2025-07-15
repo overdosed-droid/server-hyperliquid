@@ -11,12 +11,14 @@ import {
   CallToolRequestSchema,
   ListToolsRequestSchema,
 } from "@modelcontextprotocol/sdk/types.js";
-import * as hl from "@nktkas/hyperliquid";
+
 
 import { ALL_MIDS_TOOL, CANDLE_SNAPSHOT_TOOL, L2_BOOK_TOOL } from "./tools.js";
 import { getAllMids, getCandleSnapshot, getL2Book } from "./actions.js";
 
 async function main() {
+  const hl = await import("@nktkas/hyperliquid");
+
   console.error("Starting Hyperliquid MCP server...");
   const server = new Server(
     {
